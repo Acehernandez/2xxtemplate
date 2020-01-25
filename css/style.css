@@ -10,71 +10,59 @@
 /*  1.  Theme default CSS
 /*----------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 
-.glitch-wrapper {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.glitch {
-  @offset1: 2px;
-  @offset2: -2px;
-  @highlight1: #49FC00;
-  @highlight2: spin(@highlight1, 180);
-  font-family: 'Archivo Black', sans-serif;
-  color: white;
-  font-size: 150px;
-  text-transform: upercase;
-  position: relative;
-  display: inline-block;
   
-  &::before,
-  &::after  {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-  }
+  h1.glitch
+    color: white
+    font-family: sans-serif
+    font-weight: 800
+    position: relative
+    font-size: 100px
+    padding: 30px
+    
+  h1.glitch::before, h1.glitch::after
+    padding: 30px
+    color: white
+    content: "Glitch"
+    position: absolute
+    width: 100%
+    height: 100%
+    background: black
+    overflow: hidden
+    top: 0
   
-  &::before {
-    left: @offset1;
-    text-shadow: -2px 0 @highlight1;
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
-  }
+  h1.glitch::before
+    left: 3px
+    text-shadow: -2px 0 red
+    animation-name: glitch-animation-1
+    animation-duration: 2s
+    animation-timing-function: linear
+    animation-delay: 0s
+    animation-iteration-count: infinite
+    animation-direction: reverse-alternate
+    
+  h1.glitch::after
+    left: -3px
+    text-shadow: -2px 0 blue
+    animation-name: glitch-animation-2
+    animation-duration: 2s
+    animation-timing-function: linear
+    animation-delay: 0s
+    animation-iteration-count: infinite
+    animation-direction: reverse-alternate
   
-  &::after {
-    left: @offset2;
-    text-shadow: -2px 0 @highlight2;
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitch-anim 2.5s infinite linear alternate-reverse;
-  }
-}
-
-.glitch-frames (@n: 20, @index: 0) when (@index <= @n) {
-  @keyframeSel: percentage(@index/@n);
-  @rand1: unit(round(`Math.random()*150`),px);
-  @rand2: unit(round(`Math.random()*150`), px);
-  @{keyframeSel} {
-    clip: rect(@rand1, 9999px, @rand2, 0);
-  }
-  .glitch-frames(@n, (@index + 1));
-}
-
-@keyframes glitch-anim {
-  .glitch-frames(24);
-}
-
-@keyframes glitch-anim-2 {
-  .glitch-frames(30,2);
-}
-
+@keyframes glitch-animation-1
+  $steps: 20
+  @for $i from 0 through $steps 
+    #{percentage($i*(1/$steps))} 
+      clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+    
+@keyframes glitch-animation-2
+  $steps: 20
+  @for $i from 0 through $steps 
+    #{percentage($i*(1/$steps))} 
+      clip: rect(random(150)+px, 350px, random(150)+px, 30px)
 
 
 
