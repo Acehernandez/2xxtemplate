@@ -82,13 +82,17 @@
 					<div class="col-md-6 mt60">
 						<h2>ASL Letter Translator.</h2>
 						<p class="dark">Bilingual dictionaries are usually a two-way street; for example, you could look up a word up in English from another language. 
-							Sign-language dictionaries, however, translate only from written words to gestures. 
-							This can be hugely frustrating, particularly for parents of deaf children who want to understand gestures, or deaf people who want to interact online using their primary language.
-							Recently, innovations have been made to help this reverse translation, but they require hundreds of dollars worth of equipment. 
-							How can we assist ASL to English translation using only equipment found normally?</p>
+							Sign-language dictionaries, however, translate only from written words to gestures. While coming naturally to people, robust real-time hand perception is a decidedly challenging computer vision task, as hands often occlude themselves or each other (like in hand shakes).
+							But having this knowledge can prove useful- For example, it can form the basis for sign language understanding and hand gesture control. 
+							The reason that sign-language translation is important today is because this skill is a Catch-22: you can only look up a sign in the dictionary if you already know what it means, and although tools already exist to translate ASL to english, they can cost up to hundreds or thousands of dollars.
+							Due to the high cost of current technologies, we decided to make <span>our own tool</span> that can translate fingerspelling into written text.
+						</p>
 					</div>
 					<div class="col-md-6 mt60">
-						<p class="dark">For the hearing-impaired and their families, learning ASL can be a Catch-22, since there are ASL dictionaries in print, but because the language lacks a written form the signs are often organized according to their nearest English translation. According to Carol Neidle, “You can only look up a sign in the dictionary if you already know what it means.” This is a problem for people regularly using ASL since they cannot fully utilize the English language. Although our project will not directly solve this problem, it will give others the resources they need to tackle the problem by allowing translation to happen at home (using normal equipment.)</p>
+						<p class="dark">There's an estimated <a href="https://hhs.texas.gov/services/disability/deaf-hard-hearing/deaf-hard-hearing-faqs">over 3.8 million people</a> who are hard of hearing or deaf in Texas alone.<br>
+						“To search [sign language gestures], you have to search in English... it's unnatural.. and it's not fair" -<a href="http://www.cs.bu.edu/~sclaroff/>Stan Sclaroff</a>, professor of computer science at BU.
+						<br>“Today’s sign-language recognition is [at] about the stage where speech recognition was 20 years ago” -<a href="http://www.cc.gatech.edu/~thad/>Thad Starner</a>, professor at GA Tech.
+						</p>
 					</div>
 				</div>
 				
@@ -98,13 +102,9 @@
 					<h2><span>Instructions:</span></h2>
 					<ol>
 						<li>Open up <a href="https://johnhmejia.github.io/lettertranslate/">the demo</a></li>
-
 						<li>Wait for the mobilenet model to load; if it doesn't within a minute or so, make sure you're using chrome and have a webcam.</li>
-
 						<li>Add examples of letters by clicking and holding on the buttons that say "Add Sample". An image of your most recent sample should show on the button.</li>
-
 						<li>Once you have enough examples (100 of each should do), click train model.</li>
-
 						<li>Wait for the model to finish training; then press start! The program should highlight the letter it thinks you're signing.</li>
 					</ol>
 				
@@ -113,6 +113,7 @@
 					<p>This example shows you how to predict letters from a webcam using transfer learning.
 					<br>This example is deploying a pretrained <a href="https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet"> Mobilenet </a> model and training another model using an internal mobilenet activation to predict different letters from the webcam defined by the user.
 					<br>Thank you <a href="https://js.tensorflow.org"> Tensorflow.js</a> for your flexible and intuitive APIs.
+					<br><br>“The handicap of deafness is not in the ear; it is in the mind.” -Marlee Matlin
 					</p>
 				
 				</div>	
