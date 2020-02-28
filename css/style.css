@@ -1,14 +1,4 @@
-/* =================================
-------------------------------------
-	Labs - Design Studio
-	Version: 1.0
- ------------------------------------ 
- ====================================*/
 
-
-/*----------------------------------------*/
-/*  1.  Theme default CSS
-/*----------------------------------------*/
 
 html,
 body {
@@ -1810,6 +1800,32 @@ ul {
 		margin-bottom: 40px;
 	}
 }
+
+#timeline-content {
+  margin-top: @spacing;
+  text-align: center;  
+}
+
+/* Timeline */
+
+.timeline {
+  border-left: @line solid @color-primary;
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;    
+  background: fade(@color-light, 3%);
+  color: fade(white, 80%);
+  font-family: @font-text;  
+  margin: @spacing auto;  
+  letter-spacing: 0.5px;   
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;   
+  padding: @spacing;   
+  list-style: none;
+  text-align: left;  
+  font-weight: 100;  
+  max-width: 30%; 
+
 
 /* small mobile :320px. */
 @media only screen and (max-width: 479px) {
